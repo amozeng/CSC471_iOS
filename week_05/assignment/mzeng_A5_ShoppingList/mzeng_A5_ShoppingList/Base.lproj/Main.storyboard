@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mzeng_A5_ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQw-b9-zzb">
+                                <rect key="frame" x="126" y="60" width="162.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="pHr-8D-5Jz">
+                                <rect key="frame" x="85.5" y="100" width="243" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQa-BC-U14">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <state key="normal" title="New List"/>
+                                        <connections>
+                                            <action selector="createNewList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nxz-WY-7kk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3FA-NX-YeR">
+                                        <rect key="frame" x="104" y="0.0" width="65" height="30"/>
+                                        <state key="normal" title="New Item"/>
+                                        <connections>
+                                            <action selector="clearTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TkL-5i-n4z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0Q-LL-FhZ">
+                                        <rect key="frame" x="213" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttr-ww-aqU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NiW-Bq-Mhd">
+                                <rect key="frame" x="139.5" y="188" width="242.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter item you want to buy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kty-Gm-usC" userLabel="TF_descrption">
+                                <rect key="frame" x="139.5" y="146" width="242.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editEnded:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="5z9-d6-hV2"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-ay-rmy">
+                                <rect key="frame" x="20" y="153" width="87.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIh-RQ-uoX">
+                                <rect key="frame" x="20" y="195" width="87.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-Z6-ysk">
+                                <rect key="frame" x="20" y="247.5" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Pa-Z6-ysk" firstAttribute="leading" secondItem="ECJ-ay-rmy" secondAttribute="leading" id="6Ds-Ib-CHW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kty-Gm-usC" secondAttribute="trailing" constant="32" id="8oE-sS-89r"/>
+                            <constraint firstItem="pHr-8D-5Jz" firstAttribute="top" secondItem="hQw-b9-zzb" secondAttribute="bottom" constant="16" id="C6N-Iz-Ops"/>
+                            <constraint firstItem="QIh-RQ-uoX" firstAttribute="trailing" secondItem="ECJ-ay-rmy" secondAttribute="trailing" id="IdS-U8-fSk"/>
+                            <constraint firstItem="NiW-Bq-Mhd" firstAttribute="top" secondItem="Kty-Gm-usC" secondAttribute="bottom" constant="8" id="KH9-6w-los"/>
+                            <constraint firstItem="hQw-b9-zzb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="KL3-BE-qSW"/>
+                            <constraint firstItem="Kty-Gm-usC" firstAttribute="centerY" secondItem="ECJ-ay-rmy" secondAttribute="centerY" id="LGM-sn-ZKA"/>
+                            <constraint firstItem="hQw-b9-zzb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PPH-M9-hcq"/>
+                            <constraint firstItem="NiW-Bq-Mhd" firstAttribute="leading" secondItem="Kty-Gm-usC" secondAttribute="leading" id="Q5f-PW-6wy"/>
+                            <constraint firstItem="NiW-Bq-Mhd" firstAttribute="trailing" secondItem="Kty-Gm-usC" secondAttribute="trailing" id="YHF-eB-3Hd"/>
+                            <constraint firstItem="Kty-Gm-usC" firstAttribute="top" secondItem="pHr-8D-5Jz" secondAttribute="bottom" constant="16" id="YSj-Ch-9ro"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Pa-Z6-ysk" secondAttribute="trailing" constant="20" id="hFZ-fj-FLC"/>
+                            <constraint firstItem="ECJ-ay-rmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ohv-qF-Wxp"/>
+                            <constraint firstItem="QIh-RQ-uoX" firstAttribute="leading" secondItem="ECJ-ay-rmy" secondAttribute="leading" id="qOc-bS-B69"/>
+                            <constraint firstItem="NiW-Bq-Mhd" firstAttribute="centerY" secondItem="QIh-RQ-uoX" secondAttribute="centerY" id="sA5-Fw-1PC"/>
+                            <constraint firstItem="Kty-Gm-usC" firstAttribute="leading" secondItem="ECJ-ay-rmy" secondAttribute="trailing" constant="32" id="sbh-En-oIn"/>
+                            <constraint firstItem="pHr-8D-5Jz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgF-WS-UXH"/>
+                            <constraint firstItem="5Pa-Z6-ysk" firstAttribute="top" secondItem="QIh-RQ-uoX" secondAttribute="bottom" constant="32" id="vGi-vH-MNn"/>
+                        </constraints>
+                        <connections>
+                            <action selector="backgroundTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2LB-Ob-9JE"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="itemList" destination="5Pa-Z6-ysk" id="aZn-FZ-nYq"/>
+                        <outlet property="tf_quantity" destination="NiW-Bq-Mhd" id="Vmg-Ds-59i"/>
+                        <outletCollection property="textFields" destination="Kty-Gm-usC" collectionClass="NSMutableArray" id="6Ni-hh-Pd7"/>
+                        <outletCollection property="textFields" destination="NiW-Bq-Mhd" collectionClass="NSMutableArray" id="Fn2-lM-Hy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
